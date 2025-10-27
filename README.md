@@ -1,8 +1,21 @@
-# anonym_mail.sh
-Web-API for (anonymmail.net) which provides ability to create temporary email address for free
+# AnonymMail.cs
+Web-API for [AnonymMail](https://anonymmail.net) which provides ability to create temporary email address for free
 
 ## Example
-```bash
-source ./anonym_mail.sh
-create_email "email"
+```cs
+using System;
+using AnonymMailApi;
+
+namespace Application
+{
+    internal class Program
+    {
+        static async Task Main()
+        {
+            var api = new AnonymMail();
+            string domains = await api.GetDomains();
+            Console.WriteLine(domains);
+        }
+    }
+}
 ```

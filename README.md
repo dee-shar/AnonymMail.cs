@@ -3,7 +3,6 @@ Web-API for [AnonymMail](https://anonymmail.net) which provides ability to creat
 
 ## Example
 ```cs
-using System;
 using AnonymMailApi;
 
 namespace Application

@@ -16,6 +16,7 @@ namespace AnonymMailApi
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
         }
+        
         public async Task<string> CreateEmail(string email)
         {
             var data = new FormUrlEncodedContent(new[]
@@ -25,11 +26,13 @@ namespace AnonymMailApi
             var response = await httpClient.PostAsync($"{apiUrl}/create", data);
             return await response.Content.ReadAsStringAsync();
         }
+        
         public async Task<string> GetDomains()
         {
             var response = await httpClient.GetAsync($"{apiUrl}/getDomains");
             return await response.Content.ReadAsStringAsync();
         }
+        
         public async Task<string> GetInbox(string email)
         {
             var data = new FormUrlEncodedContent(new[]
